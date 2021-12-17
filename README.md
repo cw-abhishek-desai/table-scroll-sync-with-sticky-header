@@ -15,7 +15,7 @@ Build a scrollable table and sync it with multiple components and to create some
 
 ## Scrollable table structure 
 
-To make the table scrollable make `table` & `tbody` as `display: block;`, make `tbody` as scrollable element by `overflow-x-scroll;` and give specific. width to table data cell(`td`) for.eg. `min-width: 240px;`. This will make the table scrollable.
+To make the table scrollable make `table` & `tbody` as `display: block;`, make `tbody` as scrollable element by `overflow-x-auto;` and give specific. width to table data cell(`td`) for.eg. `min-width: 240px;`. This will make the table scrollable.
 
 Note: Also use `scrollbar-none::-webkit-scrollbar` & `scrollbar-none` if scrollbar needs to be hidden
 
@@ -24,7 +24,7 @@ Note: Also use `scrollbar-none::-webkit-scrollbar` & `scrollbar-none` if scrollb
 ```jsx
 <StyleSheet style={commonStyles} />
 <Table className={commonStyles.table}>
-   <TableMeta type="body" className={`overflow-x-scroll ${commonStyles.tableBody}`}>  //given oxygen classes for simplicity purpose
+   <TableMeta type="body" className={`overflow-x-auto ${commonStyles.tableBody}`}>  //given oxygen classes for simplicity purpose
        <Table.Row>
                <td className={commonStyles.tableData}></td>
                <td className={commonStyles.tableData}></td>
@@ -59,6 +59,7 @@ Note: Also use `scrollbar-none::-webkit-scrollbar` & `scrollbar-none` if scrollb
 
 To synronously scroll multiple `tables`/`containers` we need to use `react-scroll-sync` to achieve it. To use ScrollSync you have to wrap your scrollable content (ensure that you have `overflow: auto/scroll` in CSS) in `<ScrollSyncPane>` and then wrap everything in `<ScrollSync>`.
 
+> Note : Add the `react-scroll-sync` in PWA project only
 ####  Example.
 ```jsx
 import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
@@ -70,7 +71,7 @@ import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
     
     <Table className={commonStyles.table}>
        <ScrollSyncPane>
-         <TableMeta type="body" className={`overflow-x-scroll ${commonStyles.tableBody}`}>  
+         <TableMeta type="body" className={`overflow-x-auto ${commonStyles.tableBody}`}>  
              ....
                ....
                   <td className={commonStyles.tableData}></td>
@@ -83,7 +84,7 @@ import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
     ....
     <Table className={commonStyles.table}>
        <ScrollSyncPane>
-         <TableMeta type="body" className={`overflow-x-scroll ${commonStyles.tableBody}`}>  
+         <TableMeta type="body" className={`overflow-x-auto ${commonStyles.tableBody}`}>  
              ....
                ....
                   <td className={commonStyles.tableData}></td>
@@ -136,7 +137,7 @@ import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
     
     <Table className={commonStyles.table}>
        <ScrollSyncPane>
-         <TableMeta type="body" className={`overflow-x-scroll ${commonStyles.tableBody}`}> 
+         <TableMeta type="body" className={`overflow-x-auto ${commonStyles.tableBody}`}> 
            
             // Sticky Row added specific extra classes
             <Table.Row className={`${styles.itemStickyTabelRow} ${comparisonTableClasses.rowClasses}`}>
@@ -160,7 +161,7 @@ import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
     ....
     <Table className={commonStyles.table}>
        <ScrollSyncPane>
-         <TableMeta type="body" className={`overflow-x-scroll ${commonStyles.tableBody}`}>  
+         <TableMeta type="body" className={`overflow-x-auto ${commonStyles.tableBody}`}>  
              ....
                ....
                   <td className={commonStyles.tableData}></td>
