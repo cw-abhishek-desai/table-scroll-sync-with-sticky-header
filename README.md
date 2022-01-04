@@ -18,6 +18,8 @@ Build a scrollable table and sync it with multiple components and to create some
 To make the table scrollable make `table` & `tbody` as `display: block;`, make `tbody` as scrollable element by `overflow-x-auto;` and give specific. width to table data cell(`td`) for.eg. `min-width: 240px;`. This will make the table scrollable.
 
 Note: Also use `scrollbar-none::-webkit-scrollbar` & `scrollbar-none` if scrollbar needs to be hidden
+Note: Do not change the table data cell(`td`) display-type. If changed it won't scroll.
+
 
 ####  Example.
 
@@ -59,7 +61,8 @@ Note: Also use `scrollbar-none::-webkit-scrollbar` & `scrollbar-none` if scrollb
 
 To synronously scroll multiple `tables`/`containers` we need to use `react-scroll-sync` to achieve it. To use ScrollSync you have to wrap your scrollable content (ensure that you have `overflow: auto/scroll` in CSS) in `<ScrollSyncPane>` and then wrap everything in `<ScrollSync>`.
 
-> Note : Add the `react-scroll-sync` in PWA project only
+> Note : Add the `react-scroll-sync` in PWA project only.
+> Note: Do not change the table data cell(`td`) display-type. If changed it won't scroll.
 ####  Example.
 ```jsx
 import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
@@ -205,8 +208,8 @@ import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
 
 ## Reference
 
-- live example: https://stg-9.carwale.com/compare-cars/mahindra-xuv500-vs-jeep-compass/?c1=5365&c2=5713&source=4
 - PR: https://github.com/carwale/carwaleweb/pull/39079
+- Ref: https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46
 
 
 
